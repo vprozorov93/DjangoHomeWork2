@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   function getRecipe() {
+    var form = document.getElementById("recipes");
+   }
+
+  </script>
+<p>
+    <b>Выберите блюдо:</b><br>
+    <form id="recipes">
+    {% for recipe, url in dish.items %}
+    <!--<a href="{{url}}">{{recipe}}</a><br>-->
+    <input type="radio" value="{{url}}">{{recipe}}<br>
+    {% endfor %}
+    </form>
+</p>
+<p>
+    <b>Укажите количество персон:</b>
+    <input type="number" size="10" min="1" max="999" value="1" id="persons">
+</p>
+
+<p>
+    <input type="button" value="Получить рецепт", onclick="getRecipe()">
+</p>
+</body>
+</html>
